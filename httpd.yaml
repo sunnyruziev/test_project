@@ -16,7 +16,7 @@
       state: present
   - name: copying the index file from localhost
     copy:
-      src: /ansible/templates/webserver1
+      src: /tmp/webserver1
       dest: /var/www/html/
       remote_src: false
     notify: restart apache
