@@ -1,8 +1,11 @@
 ---
 - name: installing and configuring the HTTPD
-  hosts: webserver3
-  user: ansible
-  become: yes
+  hosts: all 
+  remote_user: ec2-user
+  become: true
+  become_method: sudo
+  ignore_errors: true
+  tasks:
   vars:
     web_pkg: httpd
 
