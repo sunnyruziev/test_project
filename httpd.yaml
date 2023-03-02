@@ -18,7 +18,7 @@
     copy:
       src: /tmp/webserver1
       dest: /var/www/html/
-      remote_src: false
+      remote_src: true
     notify: restart apache
   - name: make sure apache is running and enabled
     service:
