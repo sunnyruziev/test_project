@@ -1,16 +1,5 @@
 ---
 
-- name: a play that runs entirely on the ansible host
-  hosts: 127.0.0.1
-  connection: local
-  tasks:
-  - name: Find out User
-    shell:
-      cmd: whoami > test && cat test
-    register: result
-  - debug:
-      var: result
-
 - name: install initial packages on all boxes
   hosts: all 
   remote_user: ec2-user
