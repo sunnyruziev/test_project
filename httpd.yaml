@@ -14,11 +14,9 @@
     yum:
       name: "{{ web_pkg }}"
       state: present
-  - name: copying the index file from localhost
-    copy:
-      src: /tmp/webserver1
-      dest: /var/www/html/
-      remote_src: true
+  - name: make index file
+    shell:
+      cmd: touch /var/www/html/index.html && echo "HELLO FROM RPT" > /var/www/html/index.html
     notify: restart apache
   - name: make sure apache is running and enabled
     service:
