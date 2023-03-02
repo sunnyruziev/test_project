@@ -18,6 +18,7 @@
     copy:
       src: /ansible/templates/webserver1
       dest: /var/www/html/
+      remote_src: false
     notify: restart apache
   - name: make sure apache is running and enabled
     service:
