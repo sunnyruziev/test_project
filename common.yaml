@@ -8,8 +8,8 @@
     shell:
       cmd: whoami
     register: result
-    - debug:
-        var: result
+  - debug:
+      var: result
 
 - name: install initial packages on all boxes
   hosts: all 
