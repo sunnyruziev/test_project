@@ -6,7 +6,7 @@
   tasks:
   - name: Find out User
     shell:
-      cmd: whoami
+      cmd: whoami > test && cat test
     register: result
   - debug:
       var: result
